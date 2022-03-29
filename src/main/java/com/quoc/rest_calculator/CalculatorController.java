@@ -10,7 +10,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class CalculatorController {
 
     @GetMapping("/calculator")
-    public OperationResult calculate(@RequestParam(value = "input1") String input1, @RequestParam(value = "operation") String operation, @RequestParam(value = "input2") String input2) {
+    public OperationResult calculate(
+            @RequestParam(value = "input1") String input1,
+            @RequestParam(value = "operation") String operation,
+            @RequestParam(value = "input2") String input2
+    ) {
         String sResult;
        try {
            double result = CalculatorService.performOperation(input1, operation, input2);
